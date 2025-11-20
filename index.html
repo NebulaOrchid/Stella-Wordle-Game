@@ -51,16 +51,25 @@
         header {
             width: 100%;
             max-width: 500px;
-            border-bottom: 1px solid #3a3a3c;
-            padding: 10px 0;
+            border-bottom: 3px solid #FFD700;
+            padding: 15px 0;
             margin-bottom: 20px;
+            background: linear-gradient(90deg, transparent, rgba(107, 68, 35, 0.3), transparent);
+            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
         }
 
         h1 {
             text-align: center;
-            font-size: 36px;
-            font-weight: 700;
-            letter-spacing: 0.2rem;
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: 0.3rem;
+            background: linear-gradient(135deg, #FFD700 0%, #F5E6D3 50%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+            font-family: 'Arial Black', 'Comic Sans MS', sans-serif;
         }
 
         .game-container {
@@ -88,38 +97,41 @@
         .tile {
             width: 62px;
             height: 62px;
-            border: 2px solid #3a3a3c;
+            border: 3px solid #A67C52;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 32px;
             font-weight: bold;
             text-transform: uppercase;
-            color: #ffffff;
-            background-color: #121213;
-            transition: border-color 0.1s;
+            color: #F5E6D3;
+            background: rgba(61, 40, 23, 0.6);
+            transition: all 0.2s;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .tile.filled {
-            border-color: #565758;
+            border-color: #FFD700;
             animation: pop 0.1s;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
         }
 
         .tile.correct {
-            background-color: #538d4e;
-            border-color: #538d4e;
+            background-color: #6aaa64;
+            border-color: #6aaa64;
             color: #ffffff;
         }
 
         .tile.present {
-            background-color: #b59f3b;
-            border-color: #b59f3b;
+            background-color: #c9b458;
+            border-color: #c9b458;
             color: #ffffff;
         }
 
         .tile.absent {
-            background-color: #3a3a3c;
-            border-color: #3a3a3c;
+            background-color: #787c7e;
+            border-color: #787c7e;
             color: #ffffff;
         }
 
@@ -182,10 +194,10 @@
         .key {
             min-width: 43px;
             height: 58px;
-            border-radius: 4px;
-            border: none;
-            background-color: #818384;
-            color: #ffffff;
+            border-radius: 8px;
+            border: 2px solid #A67C52;
+            background: linear-gradient(135deg, #8B6234 0%, #6B4423 100%);
+            color: #F5E6D3;
             font-size: 13px;
             font-weight: bold;
             text-transform: uppercase;
@@ -194,11 +206,14 @@
             align-items: center;
             justify-content: center;
             padding: 0 12px;
-            transition: background-color 0.1s;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .key:hover {
-            background-color: #9a9a9c;
+            background: linear-gradient(135deg, #A67C52 0%, #8B6234 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
         }
 
         .key.wide {
@@ -206,15 +221,21 @@
         }
 
         .key.correct {
-            background-color: #538d4e;
+            background-color: #6aaa64;
+            border-color: #6aaa64;
+            color: #ffffff;
         }
 
         .key.present {
-            background-color: #b59f3b;
+            background-color: #c9b458;
+            border-color: #c9b458;
+            color: #ffffff;
         }
 
         .key.absent {
-            background-color: #3a3a3c;
+            background-color: #787c7e;
+            border-color: #787c7e;
+            color: #ffffff;
         }
 
         .modal {
@@ -235,18 +256,21 @@
         }
 
         .modal-content {
-            background-color: #121213;
-            border: 1px solid #3a3a3c;
-            border-radius: 8px;
+            background: linear-gradient(135deg, #3D2817 0%, #6B4423 100%);
+            border: 3px solid #FFD700;
+            border-radius: 15px;
             padding: 30px;
             max-width: 400px;
             width: 90%;
             text-align: center;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5), inset 0 2px 10px rgba(255, 255, 255, 0.1);
         }
 
         .modal h2 {
             margin-bottom: 20px;
-            font-size: 24px;
+            font-size: 28px;
+            color: #F5E6D3;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .stats {
@@ -260,65 +284,78 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            background: rgba(245, 230, 211, 0.1);
+            padding: 10px;
+            border-radius: 8px;
         }
 
         .stat-value {
             font-size: 36px;
             font-weight: bold;
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
 
         .stat-label {
             font-size: 12px;
-            color: #818384;
+            color: #F5E6D3;
         }
 
         .answer {
             margin: 20px 0;
             font-size: 18px;
+            color: #F5E6D3;
         }
 
         .answer-word {
             font-weight: bold;
             text-transform: uppercase;
-            color: #538d4e;
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
         }
 
         .button {
-            background-color: #538d4e;
-            color: #ffffff;
-            border: none;
-            border-radius: 4px;
+            background: linear-gradient(135deg, #6B4423 0%, #3D2817 100%);
+            color: #F5E6D3;
+            border: 2px solid #FFD700;
+            border-radius: 8px;
             padding: 12px 24px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
             margin: 5px;
-            transition: background-color 0.1s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         .button:hover {
-            background-color: #6aaa64;
+            background: linear-gradient(135deg, #8B6234 0%, #6B4423 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
         }
 
         .button.secondary {
-            background-color: #818384;
+            background: linear-gradient(135deg, #A67C52 0%, #8B6234 100%);
+            border-color: #A67C52;
         }
 
         .button.secondary:hover {
-            background-color: #9a9a9c;
+            background: linear-gradient(135deg, #C8A882 0%, #A67C52 100%);
         }
 
         .message {
             position: fixed;
             top: 80px;
-            background-color: #ffffff;
-            color: #121213;
+            background: linear-gradient(135deg, #6B4423 0%, #3D2817 100%);
+            color: #F5E6D3;
             padding: 12px 20px;
-            border-radius: 4px;
+            border-radius: 8px;
+            border: 2px solid #FFD700;
             font-weight: bold;
             z-index: 100;
             opacity: 0;
             transition: opacity 0.3s;
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
         }
 
         .message.show {
@@ -341,6 +378,117 @@
 
             .key.wide {
                 min-width: 55px;
+            }
+        }
+
+        /* Nutella Special Effects */
+        .hazelnut-particle {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #A67C52 0%, #6B4423 100%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.6;
+            animation: float 15s infinite ease-in-out;
+            box-shadow: 0 0 5px rgba(166, 124, 82, 0.5);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(0) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-15px) rotate(270deg);
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .confetti.chocolate {
+            background: linear-gradient(135deg, #6B4423 0%, #3D2817 100%);
+            border-radius: 50%;
+        }
+
+        .confetti.hazelnut {
+            background: linear-gradient(135deg, #A67C52 0%, #8B6234 100%);
+            border-radius: 50%;
+        }
+
+        .confetti.gold {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            border-radius: 50%;
+        }
+
+        .confetti.cream {
+            background: linear-gradient(135deg, #F5E6D3 0%, #E8D4C0 100%);
+            border-radius: 50%;
+        }
+
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .chocolate-drip {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(180deg, #6B4423 0%, #3D2817 100%);
+            border-radius: 0 0 2px 2px;
+            transform: translateX(-50%);
+            animation: drip 0.6s ease-out forwards;
+            z-index: 10;
+        }
+
+        @keyframes drip {
+            0% {
+                height: 0;
+            }
+            50% {
+                height: 30px;
+            }
+            100% {
+                height: 0;
+                top: 30px;
+            }
+        }
+
+        .swirl-effect {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 30%, rgba(166, 124, 82, 0.3) 70%, transparent 100%);
+            animation: swirl 2s ease-out;
+            pointer-events: none;
+            border-radius: inherit;
+        }
+
+        @keyframes swirl {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2) rotate(360deg);
+                opacity: 0;
             }
         }
     </style>
@@ -1744,10 +1892,60 @@
             maxStreak: 0
         };
 
+        // Nutella Special Effects Functions
+        function createHazelnutParticles() {
+            const particleCount = 15;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'hazelnut-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+                document.body.appendChild(particle);
+            }
+        }
+
+        function createChocolateConfetti() {
+            const colors = ['chocolate', 'hazelnut', 'gold', 'cream'];
+            const confettiCount = 100;
+
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti ' + colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = -10 + 'px';
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                confetti.style.animationDuration = (2 + Math.random() * 2) + 's';
+                confetti.style.animation = `confetti-fall ${2 + Math.random() * 2}s ease-in forwards`;
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 4000);
+            }
+        }
+
+        function addChocolateDrip(tile) {
+            const drip = document.createElement('div');
+            drip.className = 'chocolate-drip';
+            tile.style.position = 'relative';
+            tile.style.overflow = 'visible';
+            tile.appendChild(drip);
+            setTimeout(() => drip.remove(), 600);
+        }
+
+        function addSwirlEffect(row) {
+            const swirl = document.createElement('div');
+            swirl.className = 'swirl-effect';
+            row.style.position = 'relative';
+            row.appendChild(swirl);
+            setTimeout(() => swirl.remove(), 2000);
+        }
+
         // Initialize game
         function init() {
             loadStats();
             createBoard();
+            createHazelnutParticles(); // Add floating hazelnuts!
             targetWord = WORDS[Math.floor(Math.random() * WORDS.length)];
             console.log('Target word:', targetWord); // For debugging
 
@@ -1836,7 +2034,7 @@
 
             const guess = getCurrentGuess();
 
-            if (!ALLOWED_GUESSES.includes(guess)) {
+            if (!ALLOWED_GUESSES.includes(guess) && !WORDS.includes(guess)) {
                 showMessage('Not in word list');
                 shakeRow();
                 return;
@@ -1863,6 +2061,10 @@
 
         function checkGuess(guess) {
             const result = evaluateGuess(guess);
+            const row = document.querySelector(`[data-row="${currentRow}"]`);
+
+            // Add swirl effect to the row
+            addSwirlEffect(row);
 
             // Animate tiles
             for (let i = 0; i < 5; i++) {
@@ -1872,6 +2074,11 @@
                     setTimeout(() => {
                         tile.classList.add(result[i]);
                         updateKeyboard(guess[i], result[i]);
+
+                        // Add chocolate drip on correct tiles!
+                        if (result[i] === 'correct') {
+                            addChocolateDrip(tile);
+                        }
                     }, 250);
                 }, i * 300);
             }
@@ -1882,6 +2089,9 @@
                     stats.won++;
                     stats.currentStreak++;
                     stats.maxStreak = Math.max(stats.maxStreak, stats.currentStreak);
+
+                    // Chocolate confetti celebration!
+                    createChocolateConfetti();
                     setTimeout(() => showModal(true), 1000);
                 } else if (currentRow === 5) {
                     gameOver = true;
