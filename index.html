@@ -2034,7 +2034,7 @@
 
             const guess = getCurrentGuess();
 
-            if (!ALLOWED_GUESSES.includes(guess) && !WORDS.includes(guess)) {
+            if (!WORDS.includes(guess)) {
                 showMessage('Not in word list');
                 shakeRow();
                 return;
